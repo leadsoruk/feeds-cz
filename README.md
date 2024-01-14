@@ -1,1 +1,1 @@
-# feeds-cz
+https://leadsoruk.github.io/feeds-cz/1/
