@@ -144,7 +144,7 @@ html {
 }
 
 .description {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     line-height: 1.5rem;
     opacity: 0;
     animation: opacity .5s 2s 1 forwards;
@@ -168,7 +168,7 @@ $range-label-width: 60px;
 
 .money {
     display: flex;
-    gap: 2rem;
+    gap: .5rem;
     flex-direction: column;
     align-items: stretch;
 
@@ -182,7 +182,7 @@ $range-label-width: 60px;
         flex-direction: column;
         align-items: stretch;
         justify-content: space-between;
-        gap: 1rem;
+        gap: .5rem;
         &-values {
             display: flex;
             justify-content: space-between;
