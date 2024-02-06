@@ -6,6 +6,8 @@ const autoprefixer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 const sass = require('gulp-sass')(require('sass'));
 const svgSprite = require('gulp-svg-sprite')
+// const image = require('gulp-image')
+const webp = require('gulp-webp');
 const babel = require('gulp-babel')
 const notify = require("gulp-notify");
 const uglify = require('gulp-uglify-es').default;
@@ -46,6 +48,10 @@ const styles = () => {
 }
 const htmlMinify = () => {
     return src ('src/index.html')
+        .pipe(fileInclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
         .pipe(gulpIf(prod, htmlMin({
             collapseWhitespace: true,
         })))
@@ -96,9 +102,21 @@ const images = () => {
         'src/img/**/*.jpg',
         'src/img/**/*.jpeg',
         'src/img/**/*.png',
+        // 'src/img/*.svg',
     ])
+//         .pipe(image())
         .pipe(dest('dist/img'))
 }
+
+// const webpImages = () => {
+//     return src([
+//         'src/img/**/*.jpg',
+//         'src/img/**/*.jpeg',
+//         'src/img/**/*.png',
+//     ])
+//         .pipe(webp())
+//         .pipe(dest('dist/img'))
+// }
 
 watch('src/**/*.html', htmlMinify)
 watch('src/**/*.scss', styles)
@@ -111,7 +129,7 @@ exports.styles = styles
 exports.scripts = scripts
 exports.htmlMinify = htmlMinify
 exports.svgsprites = svgSprites
-exports.images = images
+// exports.images = images
 
 exports.dev = series(clean, resources, htmlMinify, scripts, styles, images, svgSprites, watchFiles)
 exports.prod = series(isProd, clean, resources, htmlMinify, scripts, styles, images, svgSprites)

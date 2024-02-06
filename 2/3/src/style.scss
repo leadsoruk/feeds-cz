@@ -17,13 +17,13 @@
 :root {
     --colorWhite: #fff;
     --colorBlack: #292929;
-    --colorPrimary: #0195f7;
-    --colorSecondary: #0f1f20;
-    --colorThird: #c77c4a;
-    --imgD: url('./img/1d.jpg');
-    --imgM: url('./img/1m.jpg');
+    --colorPrimary: #703d25;
+    --colorSecondary: #703d25;
+    --colorThird: #c27b57;
+    --imgD: url('./img/3d.jpg');
+    --imgM: url('./img/3m.jpg');
     --titleTopD: 20%;
-    --titleLeftD: 70%;
+    --titleLeftD: 60%;
 }
 
 html {
@@ -83,37 +83,30 @@ html {
 }
 
 .title {
-    position: absolute;
-    top: var(--titleTopD);
-    left: var(--titleLeftD);
     width: fit-content;
     text-align: left;
     font-size: 1.6rem;
     line-height: 1.6em;
     font-weight: 700;
     text-transform: uppercase;
+    text-shadow: -1px 1px 2px rgba(255,255,255,.8);
+
+    position: absolute;
     animation: titleTransform 1.5s forwards;
-    color: var(--colorWhite);
-    text-shadow: -1px 1px 2px rgba(0,0,0,.8);
-
-    @media (orientation: landscape) {
-        top: 1rem;
-        left: 0;
-        width: 100%;
-        text-align: center;
-
-    }
 
     @media (orientation: portrait) {
         left: 1rem;
         top: 1rem;
     }
 
-    &__second {
-        @media (orientation: portrait) {
-            display: block;
-        }
+    @media (orientation: landscape) {
+        top: 1rem;
+        left: 0;
+        width: 100%;
+        text-align: center;
     }
+
+    color: var(--colorSecondary);
 }
 .inner {
     padding: 1rem 1rem 2rem;
@@ -124,10 +117,10 @@ html {
     @media (orientation: landscape) {
         padding: 1rem 2rem 2rem;
         border-radius: 30px;
-        //width: 60%;
-        //@media (max-width: 800px) {
-        //    width: 100%;
-        //}
+        width: 60%;
+        @media (max-width: 800px) {
+            width: 100%;
+        }
     }
 }
 
@@ -135,12 +128,9 @@ html {
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--colorSecondary);
+    color: #292929;
     opacity: 0;
     animation: opacity .5s 2.1s 1 forwards;
-    @media (orientation: landscape) {
-        text-align: center;
-    }
 }
 
 .description {
@@ -148,10 +138,6 @@ html {
     line-height: 1.5rem;
     opacity: 0;
     animation: opacity .5s 2s 1 forwards;
-    @media (orientation: landscape) {
-        text-align: center;
-    }
-
 }
 
 $range-width: 100%;
@@ -168,11 +154,12 @@ $range-label-width: 60px;
 
 .money {
     display: flex;
+    align-items: center;
     gap: 2rem;
-    flex-direction: column;
-    align-items: stretch;
 
     @media screen and (orientation: portrait) {
+        flex-direction: column;
+        align-items: stretch;
         gap: 1rem;
     }
 
@@ -191,9 +178,6 @@ $range-label-width: 60px;
             animation: opacity .5s 2.2s 1 forwards;
         }
     }
-    &__down {
-        text-align: center;
-    }
     &__submit {
         background-color: var(--colorPrimary);
         border: 1px solid var(--colorPrimary);
@@ -209,9 +193,6 @@ $range-label-width: 60px;
 
         @media screen and (orientation: portrait) {
             width: 100%;
-        }
-        @media (orientation: landscape) {
-            padding: 1rem 8rem;
         }
 
         &:hover {
