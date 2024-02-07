@@ -78,7 +78,7 @@ html {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    animation: opacity 1.5s 1  forwards;
+    //animation: opacity 1.5s 1  forwards;
     overflow: hidden;
     @media screen and (orientation: landscape) {
         border-radius: 50px;
@@ -101,7 +101,7 @@ html {
     line-height: 1.6em;
     font-weight: 700;
     text-transform: uppercase;
-    animation: titleTransform 1.5s forwards;
+    //animation: titleTransform 1.5s forwards;
     color: var(--colorWhite);
     text-shadow: -1px 1px 2px rgba(0,0,0,.8);
 
@@ -129,7 +129,7 @@ html {
     will-change: transform;
     //backdrop-filter: blur(2px);
     background-color: rgba(255,255,255,0.8);
-    animation: innerTransform 2s forwards;
+    //animation: innerTransform 2s forwards;
     @media (orientation: landscape) {
         padding: 1rem 2rem 2rem;
         border-radius: 30px;
@@ -145,8 +145,8 @@ html {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--colorSecondary);
-    opacity: 0;
-    animation: opacity .5s 2.1s 1 forwards;
+    opacity: 1;
+    //animation: opacity .5s 2.1s 1 forwards;
     @media (orientation: landscape) {
         text-align: center;
     }
@@ -155,8 +155,8 @@ html {
 .description {
     margin-bottom: .5rem;
     line-height: 1.5rem;
-    opacity: 0;
-    animation: opacity .5s 2s 1 forwards;
+    opacity: 1;
+    //animation: opacity .5s 2s 1 forwards;
     @media (orientation: landscape) {
         text-align: center;
     }
@@ -196,8 +196,8 @@ $range-label-width: 60px;
             display: flex;
             justify-content: space-between;
             font-size: 1.5rem;
-            opacity: 0;
-            animation: opacity .5s 2.2s 1 forwards;
+            opacity: 1;
+            //animation: opacity .5s 2.2s 1 forwards;
         }
     }
     &__down {
@@ -213,8 +213,8 @@ $range-label-width: 60px;
         font-size: 1rem;
         cursor: pointer;
         transition: all .2s;
-        opacity: 0;
-        animation: opacity .5s 2.5s 1 forwards;
+        opacity: 1;
+        //animation: opacity .5s 2.5s 1 forwards;
 
         @media screen and (orientation: portrait) {
             width: 100%;
@@ -243,8 +243,8 @@ $range-label-width: 60px;
         outline: none;
         padding: 0;
         margin: 0;
-        opacity: 0;
-        animation: opacity .5s 2.3s 1 forwards;
+        opacity: 1;
+        //animation: opacity .5s 2.3s 1 forwards;
 
         // Range Handle
         &::-webkit-slider-thumb {
@@ -298,8 +298,8 @@ $range-label-width: 60px;
         color: var(--colorPrimary);
         font-size: 2rem;
         font-weight: 600;
-        opacity: 0;
-        animation: opacity .5s 2.4s 1 forwards;
+        opacity: 1;
+        //animation: opacity .5s 2.4s 1 forwards;
     }
     &__number {
         border: none;
@@ -320,34 +320,34 @@ $range-label-width: 60px;
         }
     }
 }
-
-@keyframes opacity {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes titleTransform {
-    0% {
-        transform: translateX(-100vw);
-    }
-
-    50% {
-        transform: translateX(-100vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes innerTransform {
-    0% {
-        transform: translateY(200%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
+//
+//@keyframes opacity {
+//    from {
+//        opacity: 0;
+//    }
+//
+//    to {
+//        opacity: 1;
+//    }
+//}
+//
+//@keyframes titleTransform {
+//    0% {
+//        transform: translateX(-100vw);
+//    }
+//
+//    50% {
+//        transform: translateX(-100vw);
+//    }
+//    100% {
+//        transform: translateX(0);
+//    }
+//}
+//@keyframes innerTransform {
+//    0% {
+//        transform: translateY(200%);
+//    }
+//    100% {
+//        transform: translateY(0%);
+//    }
+//}
