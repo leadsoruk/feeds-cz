@@ -1,29 +1,38 @@
 @font-face {
-    font-family: 'Lato';
-    src: url('fonts/Lato-Regular.woff2') format('woff2');
-    font-weight: normal;
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Lato';
-    src: url('fonts/Lato-Bold.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 :root {
     --colorWhite: #fff;
     --colorBlack: #292929;
-    --colorPrimary: #26aefc;
-    --colorSecondary: #292929;
-    --colorThird: #f6c3a4;
+    --colorPrimary: #0195f7;
+    --colorSecondary: #0f1f20;
+    --colorThird: #c77c4a;
     --imgD: url('./img/4d.jpg');
     --imgM: url('./img/4m.jpg');
     --titleTopD: 20%;
-    --titleLeftD: 65%;
+    --titleLeftD: 70%;
 }
 
 html {
@@ -69,7 +78,7 @@ html {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    animation: opacity 1.5s 1  forwards;
+    //animation: opacity 1.5s 1  forwards;
     overflow: hidden;
     @media screen and (orientation: landscape) {
         border-radius: 50px;
@@ -85,24 +94,28 @@ html {
 .title {
     position: absolute;
     top: var(--titleTopD);
-    width: 100%;
+    left: var(--titleLeftD);
+    width: fit-content;
+    text-align: left;
     font-size: 1.6rem;
     line-height: 1.6em;
     font-weight: 700;
     text-transform: uppercase;
-    text-shadow: -1px -1px 2px rgba(0,0,0,.8), 1px 2px 2px rgba(255,255,255,.8);
-    color: #a86d4e;
-    animation: titleTransform 1.5s forwards;
-
-    @media (orientation: portrait) {
-        left: 1rem;
-        top: 1rem;
-    }
+    //animation: titleTransform 1.5s forwards;
+    color: var(--colorWhite);
+    text-shadow: -1px 1px 2px rgba(0,0,0,.8);
 
     @media (orientation: landscape) {
         top: 1rem;
         left: 0;
+        width: 100%;
         text-align: center;
+
+    }
+
+    @media (orientation: portrait) {
+        left: 1rem;
+        top: 1rem;
     }
 
     &__second {
@@ -115,16 +128,15 @@ html {
     padding: 1rem 1rem 2rem;
     will-change: transform;
     //backdrop-filter: blur(2px);
-    text-align: center;
     background-color: rgba(255,255,255,0.8);
-    animation: innerTransform 2s forwards;
+    //animation: innerTransform 2s forwards;
     @media (orientation: landscape) {
         padding: 1rem 2rem 2rem;
         border-radius: 30px;
-        width: 60%;
-        @media (max-width: 800px) {
-            width: 100%;
-        }
+        //width: 60%;
+        //@media (max-width: 800px) {
+        //    width: 100%;
+        //}
     }
 }
 
@@ -133,15 +145,22 @@ html {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--colorSecondary);
-    opacity: 0;
-    animation: opacity .5s 2.1s 1 forwards;
+    opacity: 1;
+    //animation: opacity .5s 2.1s 1 forwards;
+    @media (orientation: landscape) {
+        text-align: center;
+    }
 }
 
 .description {
     margin-bottom: .5rem;
     line-height: 1.5rem;
-    opacity: 0;
-    animation: opacity .5s 2s 1 forwards;
+    opacity: 1;
+    //animation: opacity .5s 2s 1 forwards;
+    @media (orientation: landscape) {
+        text-align: center;
+    }
+
 }
 
 $range-width: 100%;
@@ -158,10 +177,13 @@ $range-label-width: 60px;
 
 .money {
     display: flex;
+    gap: .5rem;
     flex-direction: column;
     align-items: stretch;
-    gap: .5rem;
 
+    @media screen and (orientation: portrait) {
+        gap: 1rem;
+    }
 
     &__up {
         flex-grow: 2;
@@ -174,25 +196,31 @@ $range-label-width: 60px;
             display: flex;
             justify-content: space-between;
             font-size: 1.5rem;
-            opacity: 0;
-            animation: opacity .5s 2.2s 1 forwards;
+            opacity: 1;
+            //animation: opacity .5s 2.2s 1 forwards;
         }
+    }
+    &__down {
+        text-align: center;
     }
     &__submit {
         background-color: var(--colorPrimary);
         border: 1px solid var(--colorPrimary);
         border-radius: 20rem;
-        padding: 1rem 5rem;
+        padding: 1rem 2rem;
         color: var(--colorWhite);
         text-transform: uppercase;
         font-size: 1rem;
         cursor: pointer;
         transition: all .2s;
-        opacity: 0;
-        animation: opacity .5s 2.5s 1 forwards;
+        opacity: 1;
+        //animation: opacity .5s 2.5s 1 forwards;
 
         @media screen and (orientation: portrait) {
             width: 100%;
+        }
+        @media (orientation: landscape) {
+            padding: 1rem 8rem;
         }
 
         &:hover {
@@ -215,8 +243,8 @@ $range-label-width: 60px;
         outline: none;
         padding: 0;
         margin: 0;
-        opacity: 0;
-        animation: opacity .5s 2.3s 1 forwards;
+        opacity: 1;
+        //animation: opacity .5s 2.3s 1 forwards;
 
         // Range Handle
         &::-webkit-slider-thumb {
@@ -270,8 +298,8 @@ $range-label-width: 60px;
         color: var(--colorPrimary);
         font-size: 2rem;
         font-weight: 600;
-        opacity: 0;
-        animation: opacity .5s 2.4s 1 forwards;
+        opacity: 1;
+        //animation: opacity .5s 2.4s 1 forwards;
     }
     &__number {
         border: none;
@@ -292,34 +320,34 @@ $range-label-width: 60px;
         }
     }
 }
-
-@keyframes opacity {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes titleTransform {
-    0% {
-        transform: translateX(-100vw);
-    }
-
-    50% {
-        transform: translateX(-100vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes innerTransform {
-    0% {
-        transform: translateY(200%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
+//
+//@keyframes opacity {
+//    from {
+//        opacity: 0;
+//    }
+//
+//    to {
+//        opacity: 1;
+//    }
+//}
+//
+//@keyframes titleTransform {
+//    0% {
+//        transform: translateX(-100vw);
+//    }
+//
+//    50% {
+//        transform: translateX(-100vw);
+//    }
+//    100% {
+//        transform: translateX(0);
+//    }
+//}
+//@keyframes innerTransform {
+//    0% {
+//        transform: translateY(200%);
+//    }
+//    100% {
+//        transform: translateY(0%);
+//    }
+//}
