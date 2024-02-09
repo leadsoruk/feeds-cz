@@ -78,7 +78,6 @@ html {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    //animation: opacity 1.5s 1  forwards;
     overflow: hidden;
     @media screen and (orientation: landscape) {
         border-radius: 50px;
@@ -86,7 +85,7 @@ html {
         background-size: cover;
         background-position: center;
         background-image: var(--imgD);
-        text-align: right;
+        text-align: left;
     }
 
 }
@@ -143,8 +142,6 @@ html {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--colorSecondary);
-    opacity: 1;
-    //animation: opacity .5s 2.1s 1 forwards;
     @media (orientation: landscape) {
         text-align: center;
     }
@@ -153,8 +150,6 @@ html {
 .description {
     margin-bottom: .5rem;
     line-height: 1.5rem;
-    opacity: 1;
-    //animation: opacity .5s 2s 1 forwards;
     @media (orientation: landscape) {
         text-align: center;
     }
@@ -194,8 +189,6 @@ $range-label-width: 60px;
             display: flex;
             justify-content: space-between;
             font-size: 1.5rem;
-            opacity: 1;
-            //animation: opacity .5s 2.2s 1 forwards;
         }
     }
     &__down {
@@ -211,8 +204,6 @@ $range-label-width: 60px;
         font-size: 1rem;
         cursor: pointer;
         transition: all .2s;
-        opacity: 1;
-        //animation: opacity .5s 2.5s 1 forwards;
 
         @media screen and (orientation: portrait) {
             width: 100%;
@@ -241,8 +232,6 @@ $range-label-width: 60px;
         outline: none;
         padding: 0;
         margin: 0;
-        opacity: 1;
-        //animation: opacity .5s 2.3s 1 forwards;
 
         // Range Handle
         &::-webkit-slider-thumb {
@@ -296,8 +285,6 @@ $range-label-width: 60px;
         color: var(--colorPrimary);
         font-size: 2rem;
         font-weight: 600;
-        opacity: 1;
-        //animation: opacity .5s 2.4s 1 forwards;
     }
     &__number {
         border: none;
@@ -318,34 +305,3 @@ $range-label-width: 60px;
         }
     }
 }
-//
-//@keyframes opacity {
-//    from {
-//        opacity: 0;
-//    }
-//
-//    to {
-//        opacity: 1;
-//    }
-//}
-//
-//@keyframes titleTransform {
-//    0% {
-//        transform: translateX(-100vw);
-//    }
-//
-//    50% {
-//        transform: translateX(-100vw);
-//    }
-//    100% {
-//        transform: translateX(0);
-//    }
-//}
-//@keyframes innerTransform {
-//    0% {
-//        transform: translateY(200%);
-//    }
-//    100% {
-//        transform: translateY(0%);
-//    }
-//}

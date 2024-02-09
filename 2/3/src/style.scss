@@ -1,15 +1,23 @@
 @font-face {
-    font-family: 'Lato';
-    src: url('fonts/Lato-Regular.woff2') format('woff2');
-    font-weight: normal;
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Lato';
-    src: url('fonts/Lato-Bold.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Bold.woff2') format('woff2');
     font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
@@ -22,8 +30,6 @@
     --colorThird: #c27b57;
     --imgD: url('./img/3d.jpg');
     --imgM: url('./img/3m.jpg');
-    --titleTopD: 20%;
-    --titleLeftD: 60%;
 }
 
 html {
@@ -69,7 +75,6 @@ html {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    animation: opacity 1.5s 1  forwards;
     overflow: hidden;
     @media screen and (orientation: landscape) {
         border-radius: 50px;
@@ -77,51 +82,49 @@ html {
         background-size: cover;
         background-position: center;
         background-image: var(--imgD);
-        text-align: right;
+        text-align: center;
     }
-
+    @media screen and (orientation: portrait) {
+        text-align: left;
+    }
 }
 
 .title {
-    width: fit-content;
-    text-align: left;
+    position: absolute;
+    top: 1rem;
     font-size: 1.6rem;
     line-height: 1.6em;
     font-weight: 700;
     text-transform: uppercase;
+    //animation: titleTransform 1.5s forwards;
+    color: var(--colorSecondary);
     text-shadow: -1px 1px 2px rgba(255,255,255,.8);
 
-    position: absolute;
-    animation: titleTransform 1.5s forwards;
+    @media (orientation: landscape) {
+        left: 0;
+        width: 100%;
+    }
 
     @media (orientation: portrait) {
         left: 1rem;
-        top: 1rem;
+        width: fit-content;
     }
 
-    @media (orientation: landscape) {
-        top: 1rem;
-        left: 0;
-        width: 100%;
-        text-align: center;
+    &__second {
+        @media (orientation: portrait) {
+            display: block;
+        }
     }
-
-    color: var(--colorSecondary);
 }
 .inner {
     padding: 1rem 1rem 2rem;
-    text-align: center;
     will-change: transform;
-    //backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
     background-color: rgba(255,255,255,0.8);
-    animation: innerTransform 2s forwards;
+    //animation: innerTransform 2s forwards;
     @media (orientation: landscape) {
         padding: 1rem 2rem 2rem;
         border-radius: 30px;
-        width: 60%;
-        @media (max-width: 800px) {
-            width: 100%;
-        }
     }
 }
 
@@ -130,15 +133,11 @@ html {
     font-size: 1.3rem;
     font-weight: 700;
     color: #292929;
-    opacity: 0;
-    animation: opacity .5s 2.1s 1 forwards;
-}
+   }
 
 .description {
     margin-bottom: .5rem;
     line-height: 1.5rem;
-    opacity: 0;
-    animation: opacity .5s 2s 1 forwards;
 }
 
 $range-width: 100%;
@@ -159,6 +158,10 @@ $range-label-width: 60px;
     align-items: stretch;
     gap: .5rem;
 
+    @media screen and (orientation: portrait) {
+        gap: 1rem;
+    }
+
     &__up {
         flex-grow: 2;
         display: flex;
@@ -170,8 +173,6 @@ $range-label-width: 60px;
             display: flex;
             justify-content: space-between;
             font-size: 1.5rem;
-            opacity: 0;
-            animation: opacity .5s 2.2s 1 forwards;
         }
     }
     &__submit {
@@ -184,8 +185,6 @@ $range-label-width: 60px;
         font-size: 1rem;
         cursor: pointer;
         transition: all .2s;
-        opacity: 0;
-        animation: opacity .5s 2.5s 1 forwards;
 
         @media screen and (orientation: portrait) {
             width: 100%;
@@ -211,8 +210,6 @@ $range-label-width: 60px;
         outline: none;
         padding: 0;
         margin: 0;
-        opacity: 0;
-        animation: opacity .5s 2.3s 1 forwards;
 
         // Range Handle
         &::-webkit-slider-thumb {
@@ -266,8 +263,6 @@ $range-label-width: 60px;
         color: var(--colorPrimary);
         font-size: 2rem;
         font-weight: 600;
-        opacity: 0;
-        animation: opacity .5s 2.4s 1 forwards;
     }
     &__number {
         border: none;
@@ -286,36 +281,5 @@ $range-label-width: 60px;
         &:focus {
             outline: none;
         }
-    }
-}
-
-@keyframes opacity {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes titleTransform {
-    0% {
-        transform: translateX(-100vw);
-    }
-
-    50% {
-        transform: translateX(-100vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes innerTransform {
-    0% {
-        transform: translateY(200%);
-    }
-    100% {
-        transform: translateY(0%);
     }
 }
