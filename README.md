@@ -5,5 +5,7 @@ https://leadsoruk.github.io/feeds-cz/2/3/dist
 https://leadsoruk.github.io/feeds-cz/2/4/dist
 https://leadsoruk.github.io/feeds-cz/2/5/dist
 https://leadsoruk.github.io/feeds-cz/2/6/dist
+https://leadsoruk.github.io/feeds-cz/2/7/dist
+https://leadsoruk.github.io/feeds-cz/2/8/dist
 https://leadsoruk.github.io/feeds-cz/3/ фотографии
 https://leadsoruk.github.io/feeds-cz/4/ таймер
