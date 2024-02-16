@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --colorWhite: #fff;
+    --colorBlack: #292929;
+    --colorPrimary: #3e454b;
+    --colorSecondary: #282c2e;
+    --colorThird: #c77c4a;
+    --imgD: url('./img/d.jpeg');
+    --imgM: url('./img/m.jpeg');
+    --titleTopD: 20%;
+    --titleLeftD: 70%;
+}
+
+html {
+    @media screen and (min-width: 1400px) {
+        font-size: 24px;
+    }
+    @media screen and (min-width: 1000px) and (max-width: 1399px) {
+        font-size: 18px;
+    }
+    @media screen and (max-width: 1400px) {
+        font-size: 14px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--colorWhite);
+    font-family: 'Montserrat', sans-serif;
+    @media screen and (orientation: landscape) {
+        padding: 20px;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: #d9dbde;
+    background-image: var(--imgM);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    @media screen and (orientation: landscape) {
+        border-radius: 50px;
+        padding: 1rem;
+        background-size: cover;
+        background-position: center;
+        background-image: var(--imgD);
+        text-align: left;
+    }
+
+}
+
+.title {
+    position: absolute;
+    font-size: 1.6rem;
+    line-height: 1.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+    //animation: titleTransform 1.5s forwards;
+    color: var(--colorWhite);
+    text-shadow: -1px 1px 2px rgba(0,0,0,.8);
+
+    @media (orientation: landscape) {
+        top: 1rem;
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    @media (orientation: portrait) {
+        left: 1rem;
+        top: 1rem;
+        text-align: left;
+        width: fit-content;
+    }
+
+    &__second {
+        @media (orientation: portrait) {
+            display: block;
+        }
+    }
+}
+.inner {
+    padding: 1rem 1rem 2rem;
+    will-change: transform;
+    //backdrop-filter: blur(2px);
+    background-color: rgba(255,255,255,0.8);
+    //animation: innerTransform 2s forwards;
+    @media (orientation: landscape) {
+        padding: 1rem 2rem 2rem;
+        border-radius: 30px;
+        //width: 60%;
+        //@media (max-width: 800px) {
+        //    width: 100%;
+        //}
+    }
+}
+
+.subtitle {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--colorSecondary);
+    @media (orientation: landscape) {
+        text-align: center;
+    }
+}
+
+.description {
+    margin-bottom: .5rem;
+    line-height: 1.5rem;
+    @media (orientation: landscape) {
+        text-align: center;
+    }
+
+}
+
+$range-width: 100%;
+
+$range-handle-color: var(--colorWhite);
+$range-handle-color-hover: var(--colorPrimary);
+$range-handle-size: 20px;
+
+$range-track-color: var(--colorPrimary);
+$range-track-height: 10px;
+
+$range-label-color: var(--colorPrimary);
+$range-label-width: 60px;
+
+.money {
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+    align-items: stretch;
+
+    @media screen and (orientation: portrait) {
+        gap: 1rem;
+    }
+
+    &__up {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: .5rem;
+        &-values {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+    }
+    &__down {
+        text-align: center;
+    }
+    &__submit {
+        background-color: var(--colorPrimary);
+        border: 1px solid var(--colorPrimary);
+        border-radius: 20rem;
+        padding: 1rem 2rem;
+        color: var(--colorWhite);
+        text-transform: uppercase;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all .2s;
+
+        @media screen and (orientation: portrait) {
+            width: 100%;
+        }
+        @media (orientation: landscape) {
+            padding: 1rem 8rem;
+        }
+
+        &:hover {
+            background-color: var(--colorWhite);
+            color: var(--colorPrimary);
+        }
+        &:focus {
+            background-color: var(--colorWhite);
+            color: var(--colorPrimary);
+            outline: none;
+            border-color: var(--colorPrimary);
+        }
+    }
+    &__range {
+        -webkit-appearance: none;
+        width: 100%;
+        height: $range-track-height;
+        border-radius: 5px;
+        background: $range-track-color;
+        outline: none;
+        padding: 0;
+        margin: 0;
+
+        // Range Handle
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: $range-handle-size;
+            height: $range-handle-size;
+            border-radius: 50%;
+            background: $range-handle-color;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+            box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.15);
+
+            &:hover {
+                background: $range-handle-color-hover;
+            }
+        }
+
+        &:active::-webkit-slider-thumb {
+            background: $range-handle-color-hover;
+        }
+
+        &::-moz-range-thumb {
+            width: $range-handle-size;
+            height: $range-handle-size;
+            border: 0;
+            border-radius: 50%;
+            background: $range-handle-color;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+
+            &:hover {
+                background: $range-handle-color-hover;
+            }
+        }
+
+        &:active::-moz-range-thumb {
+            background: $range-handle-color-hover;
+        }
+
+        // Focus state
+        &:focus {
+
+            &::-webkit-slider-thumb {
+                //box-shadow: 0 0 0 3px $shade-0,
+                //0 0 0 6px $teal;
+            }
+        }
+    }
+    &__label {
+        text-align: center;
+        color: var(--colorPrimary);
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    &__number {
+        border: none;
+        width: 4em;
+        text-align: right;
+        padding: 0;
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: transparent;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
