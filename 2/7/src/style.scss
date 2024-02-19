@@ -97,15 +97,11 @@ html {
     font-weight: 700;
     text-transform: uppercase;
     //animation: titleTransform 1.5s forwards;
-    color: var(--colorSecondary);
-    text-shadow: 1px 1px var(--colorWhite),
-                1px -1px var(--colorWhite),
-                -1px 1px var(--colorWhite),
-                -1px -1px var(--colorWhite),
-                2px 2px currentColor,
-                2px -2px currentColor,
-                -2px 2px currentColor,
-                -2px -2px currentColor;
+    color: var(--colorWhite);
+    text-shadow: 1px 1px var(--colorSecondary),
+                1px -1px var(--colorSecondary),
+                -1px 1px var(--colorSecondary),
+                -1px -1px var(--colorSecondary);
 
     @media (orientation: landscape) {
         top: 1rem;
